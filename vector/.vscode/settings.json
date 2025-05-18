@@ -1,0 +1,5 @@
+{
+    "C_Cpp.clang_format_path": "E:\\A_software\\LLVM\\bin\\clang-format.exe",
+    "C_Cpp.clang_format_style": "file:E:\\A_Code_github\\LeetCode\\.clang-format",
+    "C_Cpp.formatting": "clangFormat"
+}

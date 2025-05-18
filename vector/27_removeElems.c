@@ -4,16 +4,12 @@
 int removeElement(int* nums, int numsSize, int val) {
     int src = 0, dst = 0;
     while (src < numsSize) {
-        if (nums[src] != val) {
-            // nums[dst++] = nums[src++];
-            nums[dst] = nums[src];
-            src++;
-            dst++;
-        } else {
-            src++;
-        }
+        if (nums[src] != val)
+            nums[dst++] = nums[src++];
+        else
+            ++src;
     }
-    return dst; // 数组中元素的下标  可以表示该元素之前的元素个数
+    return dst;  // 数组中元素的下标  可以表示该元素之前的元素个数
 }
 
 int main() {
