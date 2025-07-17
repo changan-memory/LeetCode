@@ -49,6 +49,30 @@ int removeDuplicates(int* nums, int numsSize) {
     return dst + 1;
 }
 
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        // if(nums.size() == 1)
+        //     return 1;
+        int dst = 0, src = 1;
+        while(src < nums.size()){
+            // src初始位于 dst右一
+            // 相等时，src右移动，看后面是否还有重复的元素
+            if(nums[dst] == nums[src])
+                src++;
+            // 不相等时，代表第一个数无重复元素了
+            else{
+                dst++;  //dst的下一个位置才是第二个不重复元素的位置
+                nums[dst] = nums[src];
+                src++;
+            }
+        }
+        // 最后dst会指向最后一个元素的位置
+        return dst + 1;
+    }
+};
+
+
 int main() {
     int arr[] = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
     int size = sizeof(arr) / sizeof(arr[0]);
